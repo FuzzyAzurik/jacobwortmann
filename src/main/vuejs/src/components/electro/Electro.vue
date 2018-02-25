@@ -1,11 +1,11 @@
 <template>
-    <div class="small">
+    <div class="chart-container">
         <line-chart :chart-data="dataCollection"></line-chart>
     </div>
 </template>
 
 <script>
-    import LineChart from './LineChart2';
+    import LineChart from '@/components/electro/LineChart';
     import axios from 'axios';
 
     export default {
@@ -19,8 +19,14 @@
             };
         },
         mounted() {
-            this.requestData(200)
+            this.requestData(200);
+
+            setInterval(function () {
+                console.log("calling endpoint");
+                this.requestData(200)
+            }.bind(this), 20000);
         },
+
         methods: {
             requestData(numberOfItems) {
                 const meterId = 99806;
@@ -46,4 +52,9 @@
 </script>
 
 <style>
+    .chart-container {
+        position: relative;
+        height: 60vh;
+        width: 80vw;
+    }
 </style>

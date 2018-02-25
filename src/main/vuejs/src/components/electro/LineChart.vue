@@ -8,6 +8,7 @@
         data () {
             return {
                 options: {
+                    reverse: true,
                     scales: {
                         yAxes: [{
                             ticks: {
