@@ -31,11 +31,11 @@
             requestData(numberOfItems) {
                 const meterId = 99806;
 
-                axios.get(`https://jacobwortmann.dk:9443/electro-backend/api/meter/${meterId}/groupedReadings?limit=${numberOfItems}&group=60`)
+                axios.get(`https://jacobwortmann.dk:9450/electro-api/api/kwhSpans`)
                     .then(response => {
                         console.log(response);
                         this.dataCollection = {
-                            labels: response.data.map(timeSpan => timeSpan.readingTime),
+                            labels: response.data.map(timeSpan => timeSpan.spanStart),
                             datasets: [{
                                 label: 'kwh per minute',
                                 backgroundColor: '#f87979',
