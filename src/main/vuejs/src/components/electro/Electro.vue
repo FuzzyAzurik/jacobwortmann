@@ -29,9 +29,7 @@
 
         methods: {
             requestData(numberOfItems) {
-                const meterId = 99806;
-
-                axios.get(`https://jacobwortmann.dk:9450/electro-api/api/kwhSpans`)
+                axios.get(`https://jacobwortmann.dk:9450/electro-api/api/kwhSpans?limit=${numberOfItems}&span=${300}`)
                     .then(response => {
                         console.log(response);
                         this.dataCollection = {
