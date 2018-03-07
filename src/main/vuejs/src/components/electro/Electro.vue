@@ -1,11 +1,22 @@
 <template>
-    <v-container>
-        <v-layout>
-            <v-flex>
-                <h3>Power usage</h3>
-                <span class="subheading">Below is a chart showing the power usage of the our house.</span>
-                <v-divider class="my-3"></v-divider>
-                <line-chart :chart-data="dataCollection"></line-chart>
+    <v-container id="grid" tag="section" fluid grid-list-sm>
+        <v-layout row wrap>
+            <v-flex tag="h3" class="headline">Power usage</v-flex>
+            <v-flex d-flex xs12 order-xs5>
+                <v-layout column>
+                    <v-flex>
+                        <v-card flat>
+                            <v-card-text>
+                                Below is a chart showing the power usage of the our house.
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                    <v-flex>
+                        <v-card flat>
+                            <line-chart :chart-data="dataCollection"></line-chart>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
             </v-flex>
         </v-layout>
     </v-container>
@@ -37,7 +48,7 @@
 
         methods: {
             requestData(numberOfItems) {
-                axios.get(`http://jacobwortmann.dk:9090/electro-api/api/kwhSpans?limit=${numberOfItems}&span=${300}`)
+                axios.get(`http://jacobwortmann.dk/electro-api/api/kwhSpans?limit=${numberOfItems}&span=${300}`)
                     .then(response => {
                         console.log(response);
                         this.dataCollection = {
