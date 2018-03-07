@@ -34,7 +34,7 @@
         </v-navigation-drawer>
         <v-toolbar app fixed clipped-left>
             <v-toolbar-side-icon @click.stop="drawer = !drawer"/>
-            <v-toolbar-title>Jacob Wortmann</v-toolbar-title>
+            <v-toolbar-title>{{pageTitle}}</v-toolbar-title>
         </v-toolbar>
         <v-content>
             <v-container fluid fill-height>
@@ -55,9 +55,9 @@
             drawer: true,
             items: [
                 {
-                    title: "Home",
+                    title: "Profile",
                     icon: "dashboard",
-                    path: "/",
+                    path: "/profile",
                 },
                 {
                     title: "Projects",
@@ -71,9 +71,9 @@
                     ]
                 },
                 {
-                    title: "About",
+                    title: "Resume",
                     icon: "dashboard",
-                    path: "/about",
+                    path: "/resume",
                 }
             ]
         }),
