@@ -12,9 +12,15 @@
                         <h3>Jacob Frøkjær Wortmann</h3>
                         <h5>Software Engineer at Spar Nord A/S</h5>
                         <v-flex d-flex offset-xs4 xs4 justify-space-around>
-                            <v-icon>fab fa-github</v-icon>
-                            <v-icon>fab fa-facebook</v-icon>
-                            <v-icon>fab fa-linkedin</v-icon>
+                            <v-btn icon href="https://github.com/FuzzyAzurik/">
+                                <v-icon>fab fa-github</v-icon>
+                            </v-btn>
+                            <v-btn icon href="https://www.facebook.com/jacob.wortmann">
+                                <v-icon>fab fa-facebook</v-icon>
+                            </v-btn>
+                            <v-btn icon href="https://linkedin.com/in/jacob-frøkjær-wortmann">
+                                <v-icon>fab fa-linkedin</v-icon>
+                            </v-btn>
                         </v-flex>
                     </v-card-text>
                 </v-card>
@@ -41,11 +47,30 @@
                         <span>Skills</span>
                     </v-card-title>
                     <v-divider/>
-                    <v-card-text>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt error eum ipsa
-                        repellendus. Accusamus aliquid, animi assumenda consectetur consequuntur, deserunt
-                        facilis fugiat illo impedit iure mollitia rerum tempore, veniam voluptatem!
-                    </v-card-text>
+                    <v-list two-line dense>
+                        <template v-for="(item, index) in skillsData">
+                            <v-list-tile>
+                                <v-list-tile-content>
+                                    <v-list-tile-title>
+                                        <v-layout row wrap>
+                                            <v-flex xs9 d-flex>
+                                                {{item.title}}
+                                            </v-flex>
+                                            <v-flex xs3 d-flex>
+                                                {{item.value}}%
+                                            </v-flex>
+                                        </v-layout>
+                                    </v-list-tile-title>
+                                    <v-list-tile-sub-title>
+                                        <v-progress-linear
+                                            v-model="item.value"
+                                            :buffer-value=100
+                                        ></v-progress-linear>
+                                    </v-list-tile-sub-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                        </template>
+                    </v-list>
                 </v-card>
             </v-flex>
             <v-flex d-flex md12 lg4>
@@ -61,12 +86,12 @@
                                 <v-layout row wrap>
                                     <v-flex xs3 d-flex>
                                         <v-card flat>
-                                            {{item.header}}:
+                                            {{item.title}}:
                                         </v-card>
                                     </v-flex>
                                     <v-flex xs9 d-flex>
                                         <v-card flat>
-                                            {{item.value}}
+                                            {{item.text}}
                                         </v-card>
                                     </v-flex>
                                 </v-layout>
@@ -97,31 +122,50 @@
         data: () => ({
             informationData: [
                 {
-                    header: "Name",
-                    value: "Jacob Frøkjær Wortmann"
+                    title: "Name",
+                    text: "Jacob Frøkjær Wortmann"
                 },
                 {
-                    header: "Age",
-                    value: "28"
+                    title: "Age",
+                    text: "28"
                 },
                 {
-                    header: "Position",
-                    value: "Software Engineer"
+                    title: "Position",
+                    text: "Software Engineer"
                 },
                 {
-                    header: "Nationality",
-                    value: "Danish"
+                    title: "Nationality",
+                    text: "Danish"
                 },
                 {
-                    header: "Location",
-                    value: "Aalborg, Denmark"
+                    title: "Location",
+                    text: "Aalborg, Denmark"
                 },
                 {
-                    header: "E-mail",
-                    value: "jacob@wortmann.dk"
+                    title: "E-mail",
+                    text: "jacob@wortmann.dk"
                 }
             ],
-            pageTitle: "Profile"
+            skillsData: [
+                {
+                    title: "Java EE",
+                    value: 90
+                },
+                {
+                    title: "SQL",
+                    value: 70
+                },
+                {
+                    title: "JS(Vue/Vanilla)",
+                    value: 60
+                },
+                {
+                    title: "HTML5/CSS3",
+                    value: 50
+                }
+            ],
+            pageTitle:
+                "Profile"
         })
     }
 </script>
