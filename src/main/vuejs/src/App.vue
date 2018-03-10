@@ -37,11 +37,7 @@
             <v-toolbar-title>{{pageTitle}}</v-toolbar-title>
         </v-toolbar>
         <v-content>
-            <v-container fluid fill-height>
-                <v-layout justify-center>
-                    <router-view/>
-                </v-layout>
-            </v-container>
+            <router-view/>
         </v-content>
         <v-footer app fixed>
             <span>&copy; 2017</span>
@@ -56,12 +52,17 @@
             items: [
                 {
                     title: "Profile",
-                    icon: "dashboard",
+                    icon: "face",
                     path: "/profile",
                 },
                 {
+                    title: "Resume",
+                    icon: "work",
+                    path: "/resume",
+                },
+                {
                     title: "Projects",
-                    icon: "dashboard",
+                    icon: "folder",
                     items: [
                         {
                             title: "Electro",
@@ -69,11 +70,6 @@
                             path: "/electro"
                         }
                     ]
-                },
-                {
-                    title: "Resume",
-                    icon: "dashboard",
-                    path: "/resume",
                 }
             ]
         }),
