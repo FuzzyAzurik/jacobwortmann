@@ -55,10 +55,25 @@
                         Information
                     </v-card-title>
                     <v-divider/>
-                    <v-card-text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores at
-                        commodi, dignissimos dolore eveniet exercitationem expedita hic inventore iste laborum
-                        laudantium libero nobis non, nulla quae quaerat, sint vitae!
-                    </v-card-text>
+                    <v-list dense>
+                        <template v-for="(item, index) in informationData">
+                            <v-list-tile>
+                                <v-layout row wrap>
+                                    <v-flex xs3 d-flex>
+                                        <v-card flat>
+                                            {{item.header}}:
+                                        </v-card>
+                                    </v-flex>
+                                    <v-flex xs9 d-flex>
+                                        <v-card flat>
+                                            {{item.value}}
+                                        </v-card>
+                                    </v-flex>
+                                </v-layout>
+                            </v-list-tile>
+                            <v-divider v-if="index + 1 < informationData.length" :key="`divider-${index}`"/>
+                        </template>
+                    </v-list>
                 </v-card>
             </v-flex>
             <v-flex d-flex md12 lg4>
@@ -80,6 +95,32 @@
 <script>
     export default {
         data: () => ({
+            informationData: [
+                {
+                    header: "Name",
+                    value: "Jacob Frøkjær Wortmann"
+                },
+                {
+                    header: "Age",
+                    value: "28"
+                },
+                {
+                    header: "Position",
+                    value: "Software Engineer"
+                },
+                {
+                    header: "Nationality",
+                    value: "Danish"
+                },
+                {
+                    header: "Location",
+                    value: "Aalborg, Denmark"
+                },
+                {
+                    header: "E-mail",
+                    value: "jacob@wortmann.dk"
+                }
+            ],
             pageTitle: "Profile"
         })
     }
