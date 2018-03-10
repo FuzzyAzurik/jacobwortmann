@@ -21,7 +21,11 @@
             </v-flex>
             <v-flex d-flex md12 lg7>
                 <v-card>
-                    <v-card-title>Profile</v-card-title>
+                    <v-card-title>
+                        <v-icon class="icon-header" small>fas fa-user</v-icon>
+                        Profile
+                    </v-card-title>
+                    <v-divider/>
                     <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cum delectus ea
                         earum error ex facilis fugit hic ipsam laudantium molestiae nihil non provident similique
                         tenetur, ullam unde! At. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
@@ -33,7 +37,7 @@
             <v-flex d-flex md12 lg4>
                 <v-card flat>
                     <v-card-title justify-space-around>
-                        <v-icon small>fas fa-code</v-icon>
+                        <v-icon class="icon-header" small>fas fa-code</v-icon>
                         <span>Skills</span>
                     </v-card-title>
                     <v-divider/>
@@ -47,7 +51,7 @@
             <v-flex d-flex md12 lg4>
                 <v-card flat>
                     <v-card-title>
-                        <v-icon left small>fas fa-info-circle</v-icon>
+                        <v-icon class="icon-header" small>fas fa-info-circle</v-icon>
                         Information
                     </v-card-title>
                     <v-divider/>
@@ -60,7 +64,7 @@
             <v-flex d-flex md12 lg4>
                 <v-card flat>
                     <v-card-title>
-                        <v-icon left small>fas fa-briefcase</v-icon>
+                        <v-icon class="icon-header" small>fas fa-briefcase</v-icon>
                         Toolbox
                     </v-card-title>
                     <v-divider/>
@@ -80,3 +84,8 @@
         })
     }
 </script>
+<style>
+    .icon-header {
+        margin-right: 0.5em;
+    }
+</style>
