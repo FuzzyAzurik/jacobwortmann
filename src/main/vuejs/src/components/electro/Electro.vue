@@ -1,7 +1,25 @@
 <template>
-    <div class="chart-container">
-        <line-chart :chart-data="dataCollection"></line-chart>
-    </div>
+    <v-container id="grid" tag="section" fluid grid-list-sm>
+        <v-layout row wrap>
+            <v-flex tag="h3" class="headline">Power usage</v-flex>
+            <v-flex d-flex xs12 order-xs5>
+                <v-layout column>
+                    <v-flex>
+                        <v-card flat>
+                            <v-card-text>
+                                Below is a chart showing the power usage of the our house.
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                    <v-flex>
+                        <v-card flat>
+                            <line-chart :chart-data="dataCollection"></line-chart>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -15,21 +33,22 @@
         props: {},
         data() {
             return {
-                dataCollection: null
+                dataCollection: null,
+                numberOfItems: 100
             };
         },
         mounted() {
-            this.requestData(200);
+            this.requestData(this.numberOfItems);
 
             setInterval(function () {
                 console.log("calling endpoint");
-                this.requestData(200)
-            }.bind(this), 20000);
+                this.requestData(this.numberOfItems)
+            }.bind(this), 60000);
         },
 
         methods: {
             requestData(numberOfItems) {
-                axios.get(`https://jacobwortmann.dk:9450/electro-api/api/kwhSpans?limit=${numberOfItems}&span=${300}`)
+                axios.get(`http://jacobwortmann.dk/electro-api/api/kwhSpans?limit=${numberOfItems}&span=${300}`)
                     .then(response => {
                         console.log(response);
                         this.dataCollection = {
@@ -37,6 +56,9 @@
                             datasets: [{
                                 label: 'kwh per minute',
                                 backgroundColor: '#f87979',
+                                pointRadius: 2.5,
+                                pointHoverRadius: 5,
+                                spanGabs: true,
                                 data: response.data.map(timeSpan => timeSpan.kwhSum)
                             }]
                         };
@@ -50,9 +72,9 @@
 </script>
 
 <style>
-    .chart-container {
-        position: relative;
-        height: 60vh;
-        width: 80vw;
+    canvas {
+        position: relative !important;
+        width: 90vw !important;
+        height: 60vh !important;
     }
 </style>

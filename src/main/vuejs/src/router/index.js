@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import About from '@/components/About'
+import Resume from '@/components/Resume'
+import Profile from '@/components/Profile'
 import Electro from '@/components/electro/Electro'
 import Projects from '@/components/Projects'
 
@@ -11,8 +11,18 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Home',
-            component: Home
+            name: 'Profile',
+            component: Profile
+        },
+        {
+            path: '/profile',
+            name: 'Profile',
+            component: Profile
+        },
+        {
+            path: '/resume',
+            name: 'Resume',
+            component: Resume
         },
         {
             path: '/projects',
@@ -23,11 +33,6 @@ export default new Router({
             path: '/electro',
             name: 'Electro',
             component: Electro
-        },
-        {
-            path: '/about',
-            name: 'About',
-            component: About
         }
     ]
 })
