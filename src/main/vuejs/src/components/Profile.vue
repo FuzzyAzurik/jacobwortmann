@@ -28,7 +28,7 @@
             <v-flex d-flex md12 lg7>
                 <v-card>
                     <v-card-title>
-                        <v-icon class="icon-header" small>fas fa-user</v-icon>
+                        <v-icon class="icon-header" small>far fa-user-circle</v-icon>
                         Profile
                     </v-card-title>
                     <v-divider/>
@@ -163,9 +163,7 @@
                     title: "HTML5/CSS3",
                     value: 50
                 }
-            ],
-            pageTitle:
-                "Profile"
+            ]
         })
     }
 </script>
