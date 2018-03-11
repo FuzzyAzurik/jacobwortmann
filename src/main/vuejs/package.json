@@ -6,11 +6,11 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
+    "start": "../../../target/node/npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
-    "build": "node build/build.js"
+    "e2e": "../../../target/node/node test/e2e/runner.js",
+    "test": "../../../target/node/npm run unit && ../../../target/node/npm run e2e",
+    "build": "../../../target/node/node build/build.js"
   },
   "dependencies": {
     "axios": "^0.17.1",

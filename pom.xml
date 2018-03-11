@@ -55,6 +55,19 @@
                         </configuration>
                     </execution>
 
+                    <execution>
+                        <id>npm unit-test</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <!-- optional: default phase is "generate-resources" -->
+                        <phase>test</phase>
+                        <!-- Optional configuration which provides for running any npm command -->
+                        <configuration>
+                            <arguments>run unit</arguments>
+                        </configuration>
+                    </execution>
+
                     <!-- Install all project dependencies -->
                     <execution>
                         <id>npm install</id>
@@ -75,6 +88,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
+                        <phase>package</phase>
                         <configuration>
                             <arguments>run build</arguments>
                         </configuration>
