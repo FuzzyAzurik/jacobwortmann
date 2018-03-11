@@ -10,23 +10,16 @@ jobs:
     steps:
       - checkout
       - run: mvn package
-  deploy:
-      machine:
-        enabled: true
-      working_directory: ~/jacobwortmann
-      steps:
-        - run:
-            command: |
-              ls
-              scp ~/jacobwortmann/target/jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
+      - store_artifacts:
+        path: target/jacobwortmann-webapp.war
+      - run:
+        command: |
+          scp target/jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+      - build:
+        filters:
+          branches:
+            only: master
