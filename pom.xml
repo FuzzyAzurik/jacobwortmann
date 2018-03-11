@@ -24,6 +24,7 @@
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
+                        <phase>generate-resources</phase>
                         <configuration>
                             <nodeVersion>v8.9.4</nodeVersion>
                             <npmVersion>5.6.0</npmVersion>
@@ -38,6 +39,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
+                        <phase>generate-resources</phase>
                         <configuration>
                             <arguments>config set registry https://registry.npmjs.org</arguments>
                         </configuration>
@@ -49,6 +51,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
+                        <phase>generate-resources</phase>
                         <!-- Optional configuration which provides for running any npm command -->
                         <configuration>
                             <arguments>config set strict-ssl false</arguments>
@@ -61,9 +64,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
-                        <!-- optional: default phase is "generate-resources" -->
                         <phase>generate-resources</phase>
-                        <!-- Optional configuration which provides for running any npm command -->
                         <configuration>
                             <arguments>install</arguments>
                         </configuration>
@@ -74,9 +75,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
-                        <!-- optional: default phase is "generate-resources" -->
                         <phase>test</phase>
-                        <!-- Optional configuration which provides for running any npm command -->
                         <configuration>
                             <arguments>run unit</arguments>
                         </configuration>
