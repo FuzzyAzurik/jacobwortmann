@@ -15,10 +15,9 @@ jobs:
         enabled: true
       working_directory: ~/jacobwortmann
       steps:
-        - checkout
         - run:
             command: |
-              echo deploying
+              scp ./target/jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
 workflows:
   version: 2
   build_and_test:
@@ -27,3 +26,6 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master
