@@ -75,7 +75,7 @@
                             <goal>npm</goal>
                         </goals>
                         <!-- optional: default phase is "generate-resources" -->
-                        <phase>generate-resources</phase>
+                        <phase>pre-integration-test</phase>
                         <!-- Optional configuration which provides for running any npm command -->
                         <configuration>
                             <arguments>install</arguments>
@@ -88,7 +88,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
-                        <phase>package</phase>
+                        <phase>prepare-package</phase>
                         <configuration>
                             <arguments>run build</arguments>
                         </configuration>
