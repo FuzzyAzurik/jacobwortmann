@@ -1,18 +1,18 @@
 <template>
-    <v-container id="grid" tag="section" fluid grid-list-sm>
+    <v-container fluid grid-list-xl>
         <v-layout row wrap>
-            <v-flex tag="h3" class="headline">Power usage</v-flex>
-            <v-flex d-flex xs12 order-xs5>
+            <v-flex d-flex md12 tag="h3" class="headline">Power usage</v-flex>
+            <v-flex d-flex md12>
                 <v-layout column>
-                    <v-flex>
+                    <v-flex md12 d-flex>
                         <v-card flat>
                             <v-card-text>
                                 Below is a chart showing the power usage of the our house.
                             </v-card-text>
                         </v-card>
                     </v-flex>
-                    <v-flex>
-                        <v-card flat>
+                    <v-flex d-flex md12>
+                        <v-card class="chart-container" flat>
                             <line-chart :chart-data="dataCollection"></line-chart>
                         </v-card>
                     </v-flex>
@@ -72,9 +72,9 @@
 </script>
 
 <style>
-    canvas {
-        position: relative !important;
-        width: 90vw !important;
-        height: 60vh !important;
+    .chart-container {
+        position: relative;
+        height:40vh;
+        width:80vw;
     }
 </style>

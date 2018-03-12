@@ -19,6 +19,8 @@ jobs:
             - ~/.m2
           key: jacobwortmann-{{ checksum "pom.xml" }}
       - run: mvn package
+      - store_test_results:
+          path: target/surefire-reports
       - store_artifacts:
           path: target/jacobwortmann-webapp.war
   deploy:
@@ -44,3 +46,6 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master

@@ -48,7 +48,7 @@
                     </v-card-title>
                     <v-divider/>
                     <v-list two-line dense>
-                        <template v-for="(item, index) in skillsData">
+                        <template v-for="(item) in skillsData">
                             <v-list-tile>
                                 <v-list-tile-content>
                                     <v-list-tile-title>
@@ -108,9 +108,21 @@
                         Toolbox
                     </v-card-title>
                     <v-divider/>
-                    <v-card-text> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores at
-                        commodi, dignissimos dolore eveniet exercitationem expedita hic inventore iste laborum
-                        laudantium libero nobis non, nulla quae quaerat, sint vitae!
+                    <v-card-text>
+                        Besides working with JavaEE(or now called Jakarta EE) I juggle with learning new frameworks, build tools, and general software development topics.
+                        Below i have listed some of the topics:
+                        <v-flex d-flex>
+                            <ul>
+                                <li>RESTful API</li>
+                                <li>Git</li>
+                                <li>Continues Delivery</li>
+                                <li>Maven</li>
+                                <li>VueJs</li>
+                                <li>flyway</li>
+                                <li>npm</li>
+                                <li>webpack</li>
+                            </ul>
+                        </v-flex>
                     </v-card-text>
                 </v-card>
             </v-flex>
