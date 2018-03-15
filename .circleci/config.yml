@@ -39,6 +39,9 @@ jobs:
           at: target
       - run:
           command: |
+            ls
+            ls target
+            ls /
             ssh-keyscan -H jacobwortmann.dk >> ~/.ssh/known_hosts
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               scp ~/jacobwortmann/target/jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
