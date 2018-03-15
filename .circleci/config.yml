@@ -31,6 +31,8 @@ jobs:
             - jacobwortmann-webapp.war
 
   deploy:
+    machine:
+        enabled: true
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
