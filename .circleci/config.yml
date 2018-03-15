@@ -34,7 +34,6 @@ jobs:
       MAVEN_OPTS: -Xmx3200m
 
     steps:
-      - checkout
       - run:
           command: |
             ls
