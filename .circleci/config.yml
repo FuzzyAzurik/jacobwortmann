@@ -41,9 +41,7 @@ jobs:
           command: |
             cd target
             ssh-keyscan -H jacobwortmann.dk >> ~/.ssh/known_hosts
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              scp jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
-            fi
+            scp jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
 workflows:
   version: 2
   build_and_deploy:
@@ -52,3 +50,6 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master
