@@ -36,12 +36,12 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/jacobwortmann/target
+          at: target
       - run:
           command: |
             ssh-keyscan -H jacobwortmann.dk >> ~/.ssh/known_hosts
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              scp target/jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
+              scp ~/jacobwortmann/target/jacobwortmann-webapp.war jacob@jacobwortmann.dk:~/Programs/wlp-openliberty/usr/servers/electro/apps/
             fi
 workflows:
   version: 2
