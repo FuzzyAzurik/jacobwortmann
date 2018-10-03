@@ -32,11 +32,21 @@
                         Profile
                     </v-card-title>
                     <v-divider/>
-                    <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci cum delectus ea
-                        earum error ex facilis fugit hic ipsam laudantium molestiae nihil non provident similique
-                        tenetur, ullam unde! At. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-                        beatae dignissimos facere iusto nemo nesciunt optio placeat porro possimus ratione, recusandae
-                        rerum velit vitae? Consectetur dolorem itaque iure maxime tenetur!
+                    <v-card-text>
+                        <p>
+                            I love being a programmer, ever since i was little I was fascinated by computers.
+                            I have always known that when I grew I wanted to work with computers.
+                            By interest of becoming a programmer first spiked when I challenged by supervisor to do VBA
+                            programming.
+                            It might sound horrible today, to code in VBA, but at the time I was enchanted by solving
+                            the small problems that my coworkers had with Excel.
+                            I signed up for the university to become a Software Engineer, and I have never looked back.
+                        </p>
+                        <p>
+                            When I am not working I spend time with my lovely wife and our lovely two children.
+                            I also have a hobby in tinkering with my raspberry pis, which I now have programmed to be our family NAS and
+                            electricity measurer.
+                        </p>
                     </v-card-text>
                 </v-card>
             </v-flex>
@@ -109,7 +119,8 @@
                     </v-card-title>
                     <v-divider/>
                     <v-card-text>
-                        Besides working with JavaEE(or now called Jakarta EE) I juggle with learning new frameworks, build tools, and general software development topics.
+                        Besides working with JavaEE(or now called Jakarta EE) I juggle with learning new frameworks,
+                        build tools, and general software development topics.
                         Below i have listed some of the topics:
                         <v-flex d-flex>
                             <ul>
